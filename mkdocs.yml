@@ -1,0 +1,53 @@
+site_name: Software News Ticker Documentation
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - instant
+    - dark_mode
+
+  palette:
+    - scheme: default # Light mode
+      primary: teal
+      accent: purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate # Dark mode
+      primary: teal
+      accent: lime
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  favicon: assets/images/favicon.png
+
+nav:
+  - Home: index.md
+  - Main: app.md
+  - Feeds: feeds.md
+  - Cache: cache.md
+  - Utilities: utils.md
+
+plugins:
+  - search:
+      separator: '[\s\-]+'
+      prebuild_index: true
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - toc:
+      permalink: True
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://foresaa.github.io/ticker/
+      title: "Add-In Support URL"
+  css:
+    - app/static//custom.css
+
+copyright: "© 2024 P3MC All rights reserved"
