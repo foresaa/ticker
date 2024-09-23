@@ -20,6 +20,6 @@ app = FastAPI()
 feeds = fetch_feeds(general_news, languages)
 ```
 
-<a href = "/assets/app.html" target = "_blank">Click here to open the markmap file in a new tab</a>
+<a href = "/site_ticker/assets/app.html" target = "_blank">Click here to open the markmap file in a new tab</a>
 
-<iframe src="/assets/app.html" width="800" height="600"></iframe>
+<iframe src="/site_ticker/assets/app.html" width="800" height="600"></iframe>

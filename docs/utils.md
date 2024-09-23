@@ -26,6 +26,6 @@ def format_feed_entry(entry):
 
 ````
 
-<a href="/assets/utils.html" target="_blank">Click here to open the markmap file in a new tab</a>
+<a href="/site_tickser/assets/utils.html" target="_blank">Click here to open the markmap file in a new tab</a>
 
-<iframe src="/assets/utils.html" width="800" height="600"></iframe>
+<iframe src="/site_ticker/assets/utils.html" width="800" height="600"></iframe>

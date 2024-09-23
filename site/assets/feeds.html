@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.8.0/styles/default.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Directory: <code>C:/ticker/app/feeds</code>","children":[{"content":"File: <code>feeds.py</code>","children":[{"content":"Imports:","children":[{"content":"import feedparser","children":[],"payload":{"lines":"5,6"}}],"payload":{"lines":"4,5"}},{"content":"Functions:","children":[{"content":"<pre><code data-lines=\"15,43\">```python\n<span class=\"hljs-keyword\">def</span> <span class=\"hljs-title function_\">fetch_feeds</span>(<span class=\"hljs-params\">include_general: <span class=\"hljs-built_in\">bool</span>, languages: <span class=\"hljs-built_in\">str</span></span>):\n  <span class=\"hljs-string\">\"\"\"\n  Fetch the feeds from various programming-related sources.\n  \n  :param include_general: Whether to include general development news.\n  :param languages: Comma-separated list of programming languages.\n  :return: List of feed entries.\n  \"\"\"</span>\n  feeds_to_fetch = []\n  \n  <span class=\"hljs-keyword\">if</span> include_general:\n      feeds_to_fetch.extend(FEEDS[<span class=\"hljs-string\">\"general\"</span>])\n  \n  <span class=\"hljs-keyword\">if</span> languages:\n      <span class=\"hljs-keyword\">for</span> lang <span class=\"hljs-keyword\">in</span> languages.split(<span class=\"hljs-string\">\",\"</span>):\n          <span class=\"hljs-keyword\">if</span> lang <span class=\"hljs-keyword\">in</span> FEEDS[<span class=\"hljs-string\">\"languages\"</span>]:\n              feeds_to_fetch.append(FEEDS[<span class=\"hljs-string\">\"languages\"</span>][lang])\n  \n  feed_entries = []\n  <span class=\"hljs-keyword\">for</span> feed_url <span class=\"hljs-keyword\">in</span> feeds_to_fetch:\n      feed = feedparser.parse(feed_url)\n      feed_entries.extend(feed.entries)\n  \n  <span class=\"hljs-keyword\">return</span> feed_entries\n\n</code></pre>","children":[],"payload":{"lines":"15,43"}}],"payload":{"lines":"6,7"}},{"content":"Variables/Constants:","children":[{"content":"<pre><code class=\"language-python\">FEEDS = {\n  <span class=\"hljs-string\">\"general\"</span>: [<span class=\"hljs-string\">\"https://news.ycombinator.com/rss\"</span>, <span class=\"hljs-string\">\"https://dev.to/feed\"</span>],\n  <span class=\"hljs-string\">\"languages\"</span>: {\n      <span class=\"hljs-string\">\"python\"</span>: <span class=\"hljs-string\">\"https://realpython.com/atom.xml\"</span>,\n      <span class=\"hljs-string\">\"javascript\"</span>: <span class=\"hljs-string\">\"https://javascriptweekly.com/rss\"</span>,\n      <span class=\"hljs-string\">\"golang\"</span>: <span class=\"hljs-string\">\"https://golangweekly.com/rss\"</span>,\n  }\n}\n</code></pre>","children":[]},{"content":"<pre><code class=\"language-python\">feeds_to_fetch = []\n</code></pre>","children":[]},{"content":"<pre><code class=\"language-python\">feed_entries = []\n</code></pre>","children":[]},{"content":"<pre><code class=\"language-python\">feed = feedparser.parse(feed_url)\n</code></pre>","children":[]}],"payload":{"lines":"43,44"}}],"payload":{"lines":"2,3"}}],"payload":{"lines":"0,1"}},null)</script>
+</body>
+</html>
