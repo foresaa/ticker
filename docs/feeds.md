@@ -72,6 +72,6 @@ feed_entries = []
 feed = feedparser.parse(feed_url)
 ```
 
-<a href="/assets/feeds.html" target="_blank">Click here to open the markmap file in a new tab</a>
+<a href="/site_ticker/assets/feeds.html" target="_blank">Click here to open the markmap file in a new tab</a>
 
-<iframe src="/assets/feeds.html" width="800" height="600"></iframe>
+<iframe src="/site_ticker/assets/feeds.html" width="800" height="600"></iframe>
