@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.8.0/styles/default.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Directory: <code>C:/ticker/app</code>","children":[{"content":"File: <code>main.py</code>","children":[{"content":"Imports:","children":[{"content":"from fastapi import FastAPI, Query","children":[],"payload":{"lines":"5,6"}},{"content":"from fastapi.responses import HTMLResponse","children":[],"payload":{"lines":"6,7"}},{"content":"from app.feeds import fetch_feeds","children":[],"payload":{"lines":"7,8"}},{"content":"from app.cache import cache_result","children":[],"payload":{"lines":"8,9"}},{"content":"from fastapi.staticfiles import StaticFiles","children":[],"payload":{"lines":"9,10"}}],"payload":{"lines":"4,5"}},{"content":"Variables/Constants:","children":[{"content":"<pre><code class=\"language-python\">app = FastAPI()\n</code></pre>","children":[]},{"content":"<pre><code class=\"language-python\">feeds = fetch_feeds(general_news, languages)\n</code></pre>","children":[]}],"payload":{"lines":"10,11"}}],"payload":{"lines":"2,3"}}],"payload":{"lines":"0,1"}},null)</script>
+</body>
+</html>
